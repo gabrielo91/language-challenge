@@ -2,7 +2,7 @@
   "name": "credijusto-challenge",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "googlonEvaluator.js",
   "scripts": {
     "test": "jest"
   },

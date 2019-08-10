@@ -17,10 +17,7 @@ class GooglonEvaluator {
             if (GooglonUtils.isPreposition(word)) totalPrepositions++
             if (GooglonUtils.isVerb(word)) totalVerbs++
             if (GooglonUtils.isSubjunctiveVerb(word)) totalsubjunctiveVerbs++
-            if (!prettyNumbersArray.includes(word) && GooglonUtils.isPrettyNumber(word)) {
-                prettyNumbersArray.push(word) 
-                totalPrettyNumbers++
-            }
+            if (!prettyNumbersArray.includes(word) && GooglonUtils.isPrettyNumber(word)) prettyNumbersArray.push(word), totalPrettyNumbers++
         });
 
         console.log(`1) There are ${totalPrepositions} prepositions in the text`)
@@ -29,7 +26,9 @@ class GooglonEvaluator {
         console.log(`4) Vocabulary list ${sortedVocabulary}`)
         console.log(`5) There are ${totalPrettyNumbers} distinct pretty numbers in the text`)
 
-        return true
+        return {
+            totalPrepositions, totalVerbs, totalsubjunctiveVerbs, sortedVocabulary, totalPrettyNumbers
+        }
     }
 }
 
